@@ -20,8 +20,8 @@ public class LauncherActivity extends AppCompatActivity {
     private static final String KEY_AUTO    = "auto_connect";
 
     // ★ 在这里修改你的两个地址
-    private static final String URL_HOME    = "http://192.168.xx.xxx:8080/chat";
-    private static final String URL_OUTDOOR = "http://192.168.xx.xxx:8080/chat";
+    private static final String URL_HOME    = "http://192.168.31.193:8080/chat";
+    private static final String URL_OUTDOOR = "http://192.168.31.193:8080/chat";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
