@@ -118,7 +118,7 @@ public class WebViewActivity extends AppCompatActivity {
             webView.getSettings().setSafeBrowsingEnabled(false);
         }
 
-        webView.setWebViewClient(new WebViewClient() {
+webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 String scheme = request.getUrl().getScheme();
@@ -166,6 +166,14 @@ public class WebViewActivity extends AppCompatActivity {
                     }
                 }
             }
+
+            // ===== 下面是我们新增的方法，帮你自动填密码 =====
+            @Override
+            public void onReceivedHttpAuthRequest(WebView view,
+                    HttpAuthHandler handler, String host, String realm) {
+                handler.proceed("vivian", "739937"); // 记得把“你的自定义密码”改成你真正的密码！
+            }
+            // ===== 新增结束 =====
 
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
