@@ -16,12 +16,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Grant execute permission for gradlew
-      run: chmod +x AionApp/gradlew
     - name: Build with Gradle
       run: |
         cd AionApp
-        ./gradlew assembleDebug
+        gradle assembleDebug
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
