@@ -14,6 +14,7 @@ import android.os.Looper;
 import android.os.PowerManager;
 import android.provider.Settings;
 import android.webkit.ConsoleMessage;
+import android.webkit.HttpAuthHandler;
 import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
