@@ -29,11 +29,20 @@ jobs:
           gradle wrapper --gradle-version 8.5
           chmod +x ./gradlew
 
-      - name: Show Gradle version
-        run: ./gradlew --version
+      - name: Remove BOM from Java files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          root = Path("app/src/main/java")
+          for path in root.rglob("*.java"):
+              data = path.read_bytes()
+              if data.startswith(b"\xef\xbb\xbf"):
+                  path.write_bytes(data[3:])
+                  print(f"Removed BOM: {path}")
+          PY
 
       - name: Build Debug APK
-        run: ./gradlew clean assembleDebug --stacktrace --info
+        run: ./gradlew clean assembleDebug --stacktrace --console=plain
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
