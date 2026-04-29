@@ -24,8 +24,10 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Fix Gradle wrapper permission
-        run: chmod +x ./gradlew
+      - name: Generate Gradle Wrapper
+        run: |
+          gradle wrapper --gradle-version 8.5
+          chmod +x ./gradlew
 
       - name: Show Gradle version
         run: ./gradlew --version
