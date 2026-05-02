@@ -21,7 +21,7 @@ public class LauncherActivity extends AppCompatActivity {
 
     // ★ 在这里修改你的两个地址
     private static final String URL_HOME    = "http://192.168.31.193:8080/chat";
-    private static final String URL_OUTDOOR = "http://192.168.31.193:8080/chat";
+    private static final String URL_OUTDOOR = "http://100.123.71.76:8080/chat";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
